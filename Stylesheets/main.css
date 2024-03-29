@@ -1,0 +1,8 @@
+@import url(reset.css);
+@import url(skillpickgame.css);
+@import url(skillscoregame.css);
+
+@font-face {
+    font-family: Overpass;
+    src: url(../Fonts/OverpassMono.ttf);
+}

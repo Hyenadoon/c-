@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Распредели!</title>
+    <link rel="stylesheet" href="./Stylesheets/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"> </script> 
+    <script src="./Js/skillscore.js"> </script>
+    <style>
+        @media (min-width: 1930px) {
+
+        body {
+            display: flex;
+            flex-direction: row;
+            color: aliceblue;
+            font-size: 70px;
+            font-family: sans-serif;
+        }
+        
+    }
+
+    @media (max-width: 1930px) {
+
+        body {
+            display: flex;
+            color: aliceblue;
+            font-size: 70px;
+            font-family: sans-serif;
+        }
+        
+    }
+
+    @media (max-width: 1318px) {
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 70px;
+    font-family: sans-serif;
+}
+}
+
+    </style>
+</head>
+<body>
+
+<div class="left_block_wrap"> 
+
+    <div class="wrapper"> 
+        <div class="child">
+             Интеллект 
+        </div>
+        <div class="child_counter"> 
+            <div class="smaller_child_wrapper">
+                <svg id="intellect-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                    <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                    <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                    </svg> 
+              <div id="intellect" class="smaller_child_number"> 0 </div>
+              <svg id="intellect-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper"> 
+        <div class="child">
+             Сила 
+        </div>
+        <div class="child_counter"> 
+            <div class="smaller_child_wrapper">
+                <svg id="strength-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                    <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                    <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                    </svg> 
+              <div id="strength" class="smaller_child_number"> 0 </div>
+              <svg id="strength-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                </svg> 
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper"> 
+        <div class="child">
+             Творчество
+        </div>
+        <div class="child_counter"> 
+            <div class="smaller_child_wrapper">
+                <svg id="сreativity-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                    <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                    <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                    </svg>
+              <div class="smaller_child_number" id="creativity"> 0 </div>
+              <svg id="creativity-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                </svg> 
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="right_block_wrap"> 
+
+     <div class="score_left_wrapper">
+        <div class="score_title"> БАЛЛОВ ОСТАЛОСЬ </div>
+        <div class="score_value" id="points"> 10 </div>
+     </div>
+
+</div>
+
+</body>
+</html>

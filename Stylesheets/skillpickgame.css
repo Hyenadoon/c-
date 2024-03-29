@@ -1,0 +1,198 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    font-family: Overpass;
+  }
+  
+
+#section1 {
+    margin: 0;
+    width: 100vw;
+    display: none;
+  
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+  
+    /* This centers our sketch vertically. */
+    align-items: center;
+
+    font-family: Overpass;
+
+  }
+
+.gamecontainer {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+.block1 {
+    background-color: white;
+    width: 100%;
+  }
+
+#myCanvas {
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+
+#star-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+
+.star {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(255, 149, 1);
+    margin: 0 5px;
+  }
+
+#restart-btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    font-size: 70px;
+    cursor: pointer;
+    font-family: Overpass;
+  }
+
+#restart-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  #message:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  #message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    background-color: #000000;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    font-size: 70px;
+    display: none;
+    font-family: Overpass;
+  }
+
+  #timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 70px;
+    color: white;
+    font-family: Overpass;
+  }
+
+  #start-btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    font-size: 70px;
+    cursor: pointer;
+    font-family: Overpass;
+  }
+
+  #start-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.category {
+  margin-top: 8%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.start_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vw;
+    padding-bottom: 6vw;
+}
+
+.instruction_wrapper {
+  margin: auto;
+  text-align: center;
+  padding: 50px;
+  border: 2px solid white;
+  border-radius: 40px;
+  max-width: 70vw;
+}
+
+.instruction {
+  font-size: 30px;
+  margin: 30px;
+}
+
+.game_init_btn {
+  background-color: #000000;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 40px;
+  font-size: 40px;
+  color: #ffffff;
+  border: 2px solid white;
+}
+
+.game_init_btn:hover {
+  background-color: #ffffff;
+  border: 2px solid rgb(0, 0, 0);
+  color: #000000;
+}
+
+.logo {
+  margin: auto;
+  margin-bottom: 50px;
+  min-height: 9vw;
+}
+
+@media (max-width: 800px) {
+  .instruction {
+    font-size: 30px;
+    margin: 30px;
+  }
+
+  .logo {
+    margin: auto;
+    margin-bottom: 50px;
+    min-height: 15vw;
+  }
+
+  .start_section {
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+
+}

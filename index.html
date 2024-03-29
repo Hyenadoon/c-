@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cкилко-Линк </title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"> </script>  -->
+    <script src="./Js/p5.js"> </script>
+    <link rel="stylesheet" href="./Stylesheets/main.css">
+    <script src="./Js/skillpickgame.js"> </script>
+    <style>
+        @media (min-width: 1930px) {
+
+        #section2 {
+            Width: 100%;
+            display: flex;
+            flex-direction: row;
+            color: aliceblue;
+            font-size: 70px;
+            font-family: Overpass;
+        }
+        
+    }
+
+    @media (max-width: 1930px) {
+
+        #section2 {
+            Width: 100%;
+            display: flex;
+            color: aliceblue;
+            font-size: 70px;
+            font-family: Overpass;
+        }
+        
+    }
+
+    @media (max-width: 1318px) {
+
+        #section2 {
+    Width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 70px;
+    font-family: Overpass;
+}
+}
+
+    </style>
+</head>
+<body>
+
+        <section id="start_section" class="start_section"> 
+            <img src="./Images/Logo.svg" alt="" class="logo"> 
+            <div class="instruction_wrapper"> 
+                   <div class="instruction"> Добро пожаловать в Cкилко-Линк! <br> 
+                    Нашему клиенту требуется ваша помощь в подключении умений. Внимательно изучите бриф, 
+                     который прислал клиент и выполните задание. <br> У вас будет 24 секунды на то, 
+                     чтобы собрать нейроны. Затем, <br> направьте их в нужные разделы мозга. </div>
+                   <button id="game_init_btn" class="game_init_btn"> Понятно! </button>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const GameInitButton = document.getElementById('game_init_btn');
+            const start_section = document.getElementById('start_section');
+            const section1 = document.getElementById('section1');
+
+            GameInitButton.addEventListener('click', function() {
+            start_section.style.display = 'none'; // Скрываем нач секцию
+            section1.style.display = 'flex'; // Показываем первую секцию
+               });
+            });
+          </script>
+
+        <section id="section1" class="section_one">
+            <div id="star-container"></div>
+            <div id = "game-canvas-parent" class="gamecontainer"></div>
+            <button id="restart-btn" style="display: none;">Заново</button>
+            <div id="message">Далее >></div>
+            <button id="start-btn" onclick="TimerStart(); SnakeMove();">Cтарт!</button>
+            <div id="timer">Осталось: <span id="time"></span></div>
+        </section> 
+
+          <section id="section2" style="display: none;">
+            <div class="left_block_wrap"> 
+
+                <div class="wrapper"> 
+                    <div class="child">
+                         Интеллект 
+                    </div>
+                    <div class="child_counter"> 
+                        <div class="smaller_child_wrapper">
+                            <svg id="intellect-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                                <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                                <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                                </svg> 
+                          <div id="intellect" class="smaller_child_number"> 0 </div>
+                          <svg id="intellect-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                            <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                            <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="wrapper"> 
+                    <div class="child">
+                         Сила 
+                    </div>
+                    <div class="child_counter"> 
+                        <div class="smaller_child_wrapper">
+                            <svg id="strength-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                                <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                                <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                                </svg> 
+                          <div id="strength" class="smaller_child_number"> 0 </div>
+                          <svg id="strength-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                            <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                            <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                            </svg> 
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="wrapper"> 
+                    <div class="child">
+                         Творчество
+                    </div>
+                    <div class="child_counter"> 
+                        <div class="smaller_child_wrapper">
+                            <svg id="сreativity-plus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                                <rect x="2.5" y="2.5" width="91" height="91" rx="45.5" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                                <path d="M75 54L53.3281 40.3547C50.0719 38.3045 45.9281 38.3045 42.6719 40.3547L21 54" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                                </svg>
+                          <div class="smaller_child_number" id="creativity"> 0 </div>
+                          <svg id="creativity-minus" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="smaller_child">
+                            <rect x="2.5" y="-2.5" width="91" height="91" rx="45.5" transform="matrix(1 0 0 -1 0 91)" stroke="white" stroke-width="5" сlass="smaller_child_rect"/>
+                            <path d="M75 42L53.3281 55.6453C50.0719 57.6955 45.9281 57.6955 42.6719 55.6453L21 42" stroke="white" stroke-width="5" сlass="smaller_child_path"/>
+                            </svg> 
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="right_block_wrap"> 
+            
+                 <div class="score_left_wrapper">
+                    <div class="score_title"> Нейронов Осталось </div>
+                    <div class="score_value" id="points"> - </div>
+                 </div>
+            
+            </div>
+
+            <div id="confirmation-popup">
+                <h2>Загружаем умения...</h2>
+             </div>
+
+          </section>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const switchButton = document.getElementById('message');
+            const section1 = document.getElementById('section1');
+            const section2 = document.getElementById('section2');
+
+            switchButton.addEventListener('click', function() {
+            section1.style.display = 'none'; // Скрываем первую секцию
+            section2.style.display = 'flex'; // Показываем вторую секцию
+               });
+            });
+          </script>
+
+</body>
+</html>
